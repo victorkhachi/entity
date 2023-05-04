@@ -1,0 +1,5 @@
+module compile
+
+menus
+	menu: "compile" (openeditor)
+	action: "Translate To Code" = translate-to-java (source)

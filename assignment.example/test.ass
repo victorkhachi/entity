@@ -1,5 +1,4 @@
 entity Kachi
   name : string
   age : int
-  time : int[256] 
-end 
+end

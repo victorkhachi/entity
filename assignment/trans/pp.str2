@@ -1,0 +1,52 @@
+module pp
+
+imports
+  strategolib
+
+imports
+
+  gpp
+  libspoofax/sdf/pp
+  libspoofax/editor/refactoring/-
+  pp/assignment-parenthesize
+  pp/assignment-pp
+
+rules
+  editor-format :: ? * ? * ? * string * string -> string * ?
+  editor-format:
+    (node, _, ast, path, project-path) -> (filename, result)
+    with
+      ext      := <get-extension> path
+    ; filename := <guarantee-extension(|$[pp.[ext]])> path
+    ; result   := <pp-debug> node
+
+rules
+  
+  pp-assignment-string =
+    parenthesize-assignment
+    ; prettyprint-assignment-start-symbols
+    ; !V([], <id>)
+    ; box2text-string(|120)
+      
+  pp-partial-assignment-string =
+    parenthesize-assignment
+    ; prettyprint-assignment
+    ; !V([], <id>)
+    ; box2text-string(|120)
+    
+  pp-partial-assignment-string(|sort) =
+    parenthesize-assignment
+    ; prettyprint-assignment(|sort)
+    ; !V([], <id>)
+    ; box2text-string(|120)  
+      
+  pp-debug :
+    ast -> result
+    with
+       result := <pp-assignment-string> ast
+    <+ <bottomup(try(not(is-string); not(is-list); not(pp-assignment-string); debug(!"cannot pp ")))> ast
+    ;  result := ""
+
+rules
+  
+  construct-textual-change = construct-textual-change(pp-partial-assignment-string, parenthesize, override-reconstruction, resugar)

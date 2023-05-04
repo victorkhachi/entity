@@ -1,6 +1,0 @@
-entity Kachi
-  name : string = "boy"
-  age : int = 2 + 2
-  department -> comscience
-  time : int[256] 
-end

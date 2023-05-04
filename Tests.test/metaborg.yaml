@@ -1,0 +1,9 @@
+---
+id: org.example:Tests.test:0.1.0-SNAPSHOT
+name: Tests
+dependencies:
+  compile:
+  - org.example:Tests:0.1.0-SNAPSHOT
+  - org.metaborg:org.metaborg.meta.lang.spt:${metaborgVersion}
+build:
+  useBuildSystemSpec: true

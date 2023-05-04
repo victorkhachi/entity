@@ -4099,3 +4099,77 @@ java.lang.ThreadDeath
 	at java.lang.Thread.stop(Thread.java:853)
 	at org.metaborg.spoofax.eclipse.job.ThreadKillerJob.run(ThreadKillerJob.java:49)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.metaborg.spoofax.eclipse 4 4 2023-05-04 23:53:45.573
+!MESSAGE Errors occurred when retrieving project configuration from project directory eclipse:///assignment
+in org.metaborg.spoofax.eclipse.project.EclipseProjectService (Worker-106: Building)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 4 4 2023-05-04 23:53:45.616
+!MESSAGE ERROR in eclipse:///assignment/metaborg.yaml
+in org.metaborg.spoofax.eclipse.project.EclipseProjectService (Worker-106: Building)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 4 4 2023-05-04 23:53:45.617
+!MESSAGE Unable to read configuration from eclipse:///assignment/metaborg.yaml
+in org.metaborg.spoofax.eclipse.project.EclipseProjectService (Worker-106: Building)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 4 4 2023-05-04 23:53:45.618
+!MESSAGE 
+in org.metaborg.spoofax.eclipse.project.EclipseProjectService (Worker-106: Building)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 4 4 2023-05-04 23:53:45.622
+!MESSAGE Cannot build project, cannot retrieve Metaborg project for P/assignment
+in org.metaborg.spoofax.eclipse.build.ProjectBuilder (Worker-106: Building)
+
+
+!ENTRY org.eclipse.core.resources 2 2 2023-05-04 23:58:45.560
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2023-05-04 23:58:45.562
+!MESSAGE The project description file (.project) for 'assignment' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+!SESSION 2023-05-05 00:21:37.174 -----------------------------------------------
+eclipse.buildId=4.16.0.I20200604-0540
+java.version=1.8.0_265
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_NG
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/mypc/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.java.product -keyring /Users/mypc/.eclipse_keyring
+
+!ENTRY org.eclipse.core.net 1 0 2023-05-05 00:22:03.580
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.metaborg.spoofax.eclipse 2 4 2023-05-05 00:22:14.665
+!MESSAGE Identified language for eclipse:///assignment.example/test.aterm is null, content assist is disabled until language is identified
+in org.eclipse.jface.text.source.SourceViewerConfiguration (main)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 2 4 2023-05-05 00:22:14.670
+!MESSAGE Identified language for eclipse:///assignment.example/test.aterm is null, reference resolution is disabled until language is identified
+in org.eclipse.jface.text.source.SourceViewerConfiguration (main)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 2 4 2023-05-05 00:22:14.674
+!MESSAGE Identified language for eclipse:///assignment.example/test.aterm is null, hover tooltips are disabled until language is identified
+in org.eclipse.jface.text.source.SourceViewerConfiguration (main)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 2 4 2023-05-05 00:22:14.675
+!MESSAGE Identified language for eclipse:///assignment.example/test.aterm is null, toggle comment is disabled until language is identified
+in org.eclipse.jface.text.source.SourceViewerConfiguration (main)
+
+
+!ENTRY org.metaborg.spoofax.eclipse 4 4 2023-05-05 00:22:16.523
+!MESSAGE Failed to update editor for eclipse:///assignment.example/test.aterm
+in org.metaborg.spoofax.eclipse.editor.EditorUpdateJob (Worker-8: Updating Spoofax editor for eclipse:///assignment.example/test.aterm)
+org.metaborg.core.MetaborgException: Language could not be identified
+	at org.metaborg.spoofax.eclipse.editor.EditorUpdateJob.update(EditorUpdateJob.java:213)
+	at org.metaborg.spoofax.eclipse.editor.EditorUpdateJob.run(EditorUpdateJob.java:144)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!STACK 0
+org.metaborg.core.MetaborgException: Language could not be identified
+	at org.metaborg.spoofax.eclipse.editor.EditorUpdateJob.update(EditorUpdateJob.java:213)
+	at org.metaborg.spoofax.eclipse.editor.EditorUpdateJob.run(EditorUpdateJob.java:144)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

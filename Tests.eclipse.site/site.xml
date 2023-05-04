@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/Tests.eclipse.feature_0.1.0.qualifier.jar" id="Tests.eclipse.feature" version="0.1.0.qualifier">
+      <category name="Tests"/>
+   </feature>
+   <category-def name="Tests" label="Tests language Eclipse plugin">
+      <description>
+         Tests language Eclipse plugin.
+      </description>
+   </category-def>
+</site>
