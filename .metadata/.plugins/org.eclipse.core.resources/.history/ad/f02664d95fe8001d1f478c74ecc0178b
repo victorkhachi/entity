@@ -1,0 +1,34 @@
+module assignment
+
+imports
+  
+  Common
+ imports  Types
+  
+context-free start-symbols
+  
+  Start
+
+context-free sorts
+
+  Start Exp  Attribute Entity ATTEXP
+
+context-free syntax
+  
+  Start.Empty = <>
+  Start.Statement= <<{Entity "\n"}*>>
+ 
+  Exp= <(<Exp>)> {bracket}
+  Exp.Add= <<Exp>+<Exp>>{left}
+  Exp.Sub=  <<Exp>-<Exp>>{left}
+  Entity.Decl= <entity <Entity_Name>
+                <{Attribute "\n"}*>
+                end
+                >
+  Exp.Id=ID
+  Exp.Int=INT
+  Exp.Str= STRING
+  ATTEXP.Attexp=<= <Exp>>
+  Attribute.Exp =<<ID> :<Type> <ATTEXP?>>
+  Attribute.Ent= [[ID] -> [Entity_Name]]
+  

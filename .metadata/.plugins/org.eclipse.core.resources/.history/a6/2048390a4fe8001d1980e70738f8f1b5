@@ -1,0 +1,6 @@
+entity Kachi
+  name : string = "boy"
+  age : int = 2 + 2
+  
+  time : int[256] 
+end

@@ -1,0 +1,29 @@
+module Type
+
+imports
+  
+  Common
+
+context-free start-symbols
+  
+  Start
+
+context-free sorts
+
+  Type
+
+context-free syntax
+  
+  Start.Empty = <>
+  Start.Statement= <<{Stmt "end"}*>>
+  Stmt.Entity= <<Entity>>
+  Exp= <(<Exp>)> {bracket}
+  Exp.Add= <<Exp>+<Exp>>
+  Exp.Sub=  <<Exp>-<Exp>>
+  
+  Exp.Id=ID
+  Attribute.Exp =<<ID> :<Type> <Exp>>
+  Attribute.Ent= [[ID] -> [Entity_Name]]
+  Entity.Decl= <entity <Entity_Name>
+                {<Attribute>}*
+                >

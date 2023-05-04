@@ -1,0 +1,9 @@
+Statement(
+  [ Decl(
+      "Kachi"
+    , [ Exp("name", Tid("string"), None())
+      , Exp("age", Tid("int"), None())
+      ]
+    )
+  ]
+)

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;assignment/syntax/types.sdf3&apos; to &apos;Types.sdf3&apos;" description="Rename resource &apos;types.sdf3&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="syntax/types.sdf3" name="Types.sdf3" stamp="1682528185085" updateReferences="true"/>
+</session>

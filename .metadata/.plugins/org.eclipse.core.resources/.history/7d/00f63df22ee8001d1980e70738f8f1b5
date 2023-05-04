@@ -1,0 +1,46 @@
+module java
+
+imports strategolib
+imports signatures/-
+
+
+strategies
+	to-code = topdown(try(program-to-java))
+	get-java-attrs = topdown(try(attribute-to-java))
+//	get-java-attrs = map(attribute-to-java)
+	get-java-type = topdown(try(type-to-java))
+	type-to-string = topdown(try(spoofax-to-string))
+////	map(s) = s; all(map(s))
+
+
+rules
+	program-to-java:
+		Program(entities) -> <map(entity-to-java); concat-strings>entities
+//		with ents := <map(entity-to-java)>entities
+
+
+	entity-to-java:
+		Decl(en, la) -> $[
+			public class [eName] {
+				[atts]
+			}
+		]
+		with eName := en
+		with atts := <get-java-attrs>la
+		
+	attribute-to-java:
+		Ent(e1, e2) -> $[
+			 private [java-type] [name];
+		]
+		with java-type := <get-java-type>e2
+		with name := e1
+	
+	type-to-java:
+		Attexp(e1) -> $[[attrName]]
+		with attrName := <type-to-string>e1
+		
+	spoofax-to-string:
+		Exp(e1,e2,e3) -> $[[name]]
+		with name := e1
+		
+	

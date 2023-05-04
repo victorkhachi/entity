@@ -1,0 +1,4 @@
+module trans/javaTrans
+
+imports strategolib
+imports signatures/-

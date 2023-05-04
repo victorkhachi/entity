@@ -1,0 +1,33 @@
+module assignment
+
+imports
+  
+  Common
+ imports  Types
+  
+context-free start-symbols
+  
+  Start
+
+context-free sorts
+
+  Start Exp Stmt Attribute Entity 
+
+context-free syntax
+  
+  Start.Empty = <>
+  Start.Statement= <<{Stmt "\n"}*>>
+  Stmt.Entity= <<Entity>>
+  Exp= <(<Exp>)> {bracket}
+  Exp.Add= <<Exp>+<Exp>>
+  Exp.Sub=  <<Exp>-<Exp>>
+  
+  Exp.Id=ID
+  Exp.Int=INT
+  Exp.Str= STRING
+  Attribute.Exp =<<ID> :<Type> <Exp?>>
+  Attribute.Ent= [[ID] -> [Entity_Name]]
+  Entity.Decl= <entity <Entity_Name>
+                <{Attribute "\n"}*>
+                end
+                >

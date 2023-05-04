@@ -1,0 +1,29 @@
+module Types
+
+imports
+  
+  Common
+
+
+context-free sorts
+  Type TYPE
+
+context-free syntax
+  
+ Type.Int=<int>
+ Type.Str=<string>
+ Type.Size=<<Type>[<INT>]>
+ Type.Tid = <<Entity_Name>>
+ TYPE.INT=<int>
+ TYPE.STR=<string>
+ TYPE.Siz=<<Type>[<INT>]>
+ 
+ 
+ template options
+ 
+ "int" = keyword {reject}
+ "string" = keyword {reject}
+ 
+ 
+ 
+              

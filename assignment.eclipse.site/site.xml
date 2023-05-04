@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/assignment.eclipse.feature_0.1.0.qualifier.jar" id="assignment.eclipse.feature" version="0.1.0.qualifier">
+      <category name="assignment"/>
+   </feature>
+   <category-def name="assignment" label="assignment language Eclipse plugin">
+      <description>
+         assignment language Eclipse plugin.
+      </description>
+   </category-def>
+</site>

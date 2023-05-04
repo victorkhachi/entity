@@ -1,0 +1,23 @@
+module statics/assignment
+
+imports signatures/assignment-sig
+
+rules
+programOk : scope * Start 
+
+rules
+   typeOfExp : scope * Exp -> TYPE
+   
+rules 
+   typeOfExp(s ,Int(e))=INT().
+   typeOfExp(s ,Str(e))=STR().
+   
+rules 
+   typeOfExp(s,Add(e1,e2))=INT() :-
+     typeOfExp(s,e1)==INT(),
+     typeOfExp(s,e1)==INT().
+rules 
+   typeOfExp(s,Sub(e1,e2))=INT() :-
+     typeOfExp(s,e1)==INT(),
+     typeOfExp(s,e1)==INT().
+  
