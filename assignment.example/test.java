@@ -5,4 +5,6 @@ private string name;
 
 private int age;
 
+private friend uche()
+
 }

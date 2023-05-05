@@ -27,6 +27,7 @@ stmtsOK maps stmtOk(*,list(*))
   
   
   typeOfType(s,Tid("int"))=INT().
+  typeOfType(s,Tid("string"))=STR().
   
 //  attOk(s,Exp(e1,e2,e3)) :-{T}
 //     typeOfType( e2)==T.

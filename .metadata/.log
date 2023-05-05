@@ -4173,3 +4173,6 @@ org.metaborg.core.MetaborgException: Language could not be identified
 	at org.metaborg.spoofax.eclipse.editor.EditorUpdateJob.update(EditorUpdateJob.java:213)
 	at org.metaborg.spoofax.eclipse.editor.EditorUpdateJob.run(EditorUpdateJob.java:144)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.resources 2 10035 2023-05-05 00:29:44.986
+!MESSAGE The workspace will exit with unsaved changes in this session.

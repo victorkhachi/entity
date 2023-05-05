@@ -1,4 +1,5 @@
 entity Kachi
   name : string
   age : int
+  friend -> uche
 end
