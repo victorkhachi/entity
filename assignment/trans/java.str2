@@ -7,10 +7,6 @@ imports signatures/-
 strategies
 	to-code = topdown(try(program-to-java))
 	
-//	get-java-attrs = topdown(try(exp-to-java <+ enti-att-to-java))
-
-	type-to-string = topdown(try(spoofax-to-string))
-////	map(s) = s; all(map(s))
 
 
 rules
@@ -25,25 +21,71 @@ rules
 				[atts]
 			}
 		]
-		with eName := en
-		with atts := <map(exp-to-java <+ enti-att-to-java); concat-strings>la
-		
+		with
+			eName := en 
+			; atts := <map(exp-to-java <+ enti-att-to-java); concat-strings>la
+			
+			
+//	exp-to-java::? -> ?	
 	exp-to-java:
 		Exp(e1, e2, e3) -> $[
-			 private [java-type] [name];
+			 private [java-type] [name] [val];
 		]
-		with java-type := <type-to-string>e2
-		with name := e1
+		with 
+			java-type := <to-java-type>e2
+			; name := e1
+			; val := <res-exp <+ none>e3
+			
+			
 	enti-att-to-java:
 	    Ent(e1,e2)-> $[
 	    private [eName] [entity]()
 	    ]
-	    with eName := e1
-	    with entity := e2
-	spoofax-to-string:
-		Tid(e1) -> $[[typeName]] 
-		with typeName := e1
-		
-		
+	    with
+	    	 eName := e1
+	  		 ;entity := e2
+	 
+//	to-java-type::Type -> ? 
+	to-java-type:
+		Int() -> $[int] 
 	
+	to-java-type:
+	    Str() -> $[string]
+	
+	res-exp	:
+	  Some(Attexp(e)) -> [expression]
+	  with 
+	  expression := <compute-exp >e	
+	  
+	compute-exp:
+	   Add(e1,e2) -> $[ [p1] + [p2]]
+	   with
+	      p1 := <compute-exp>e1
+	     ;p2 := <compute-exp>e2
+	
+	none:
+	  None() -> $[]
+	  
+	compute-exp:
+	   Sub(e1,e2) -> Sub(p1,p2)
+	   with
+	      p1 := e1
+	     ;p2 :=e2
+	
+	compute-exp:
+	   String(e1) -> e1
+	 
+	compute-exp:
+	   Num(e1) -> e1
+	  
+	compute-exp:
+	   Id(e1) -> e1
+	  
+	     
+    
+      
+   
+   
+    
+	      
 	

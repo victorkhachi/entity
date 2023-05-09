@@ -26,8 +26,8 @@ context-free syntax
                 end
                 >
   Exp.Id=ID
-  Exp.Int=INT
-  Exp.Str= STRING
+  Exp.Num=INT
+  Exp.String= STRING
   ATTEXP.Attexp=<= <Exp>>
   Attribute.Exp =<<ID> :<Type> <ATTEXP?>>
   Attribute.Ent= [[ID] -> [Entity_Name]]

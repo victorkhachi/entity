@@ -1,8 +1,15 @@
 Statement(
   [ Decl(
       "Kachi"
-    , [ Exp("name", Tid("string"), None())
-      , Exp("age", Tid("int"), None())
+    , [ Exp("firstname", Str(), Some(Attexp(Str("\"kachi\""))))
+      , Exp("surname", Str(), None())
+      , Exp("age", Int(), Some(Attexp(Int("24"))))
+      , Exp(
+          "score"
+        , Int()
+        , Some(Attexp(Add(Int("2"), Int("40"))))
+        )
+      , Ent("friend", "uche")
       ]
     )
   ]
