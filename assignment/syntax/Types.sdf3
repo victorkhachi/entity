@@ -10,10 +10,12 @@ context-free sorts
 
 context-free syntax
   
-// Type.Int=<int>
-// Type.Str=<string>
+ Type.Int=<int>
+ Type.Str=<string>
  Type.Size=<<Type>[<INT>]>
- Type.Tid = TYPE_NAME
+// Type.Tid = TYPE_NAME
+ 
+ 
  TYPE.INT=<int>
  TYPE.STR=<string>
  TYPE.Siz=<<Type>[<INT>]>

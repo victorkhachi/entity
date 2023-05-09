@@ -6,9 +6,9 @@ imports signatures/-
 
 strategies
 	to-code = topdown(try(program-to-java))
-	get-java-attrs = topdown(try(exp-to-java <+ enti-att-to-java))
-//	get-java-attrs = map(attribute-to-java)
-//	get-java-type = topdown(try(type-to-java))
+	
+//	get-java-attrs = topdown(try(exp-to-java <+ enti-att-to-java))
+
 	type-to-string = topdown(try(spoofax-to-string))
 ////	map(s) = s; all(map(s))
 
@@ -26,7 +26,7 @@ rules
 			}
 		]
 		with eName := en
-		with atts := <get-java-attrs>la
+		with atts := <map(exp-to-java <+ enti-att-to-java); concat-strings>la
 		
 	exp-to-java:
 		Exp(e1, e2, e3) -> $[
