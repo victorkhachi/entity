@@ -1,8 +1,8 @@
 entity Kachi
-  firstname : string ="kachi"
-  surname : string = "obi"
-  age : int =24
-  score: int = 2+40 
+  firstname : string 
+  surname : string ="kachi"
+  age : int =24 - 21 -4
+  score: int 
   friend -> uche
   
 end

@@ -1,14 +1,14 @@
 
 public class Kachi {
 	
-private string firstname ;
+private String firstname ;
 
-private string surname "kachi";
+private String surname = "kachi";
 
-private int age 24 + 21;
+private int age = 24 - 21 - 4;
 
 private int score ;
 
-private friend uche()
+public uche  friend = new uche()
 
 }

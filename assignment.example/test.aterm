@@ -1,14 +1,18 @@
 Statement(
   [ Decl(
       "Kachi"
-    , [ Exp("firstname", Str(), Some(Attexp(Str("\"kachi\""))))
-      , Exp("surname", Str(), None())
-      , Exp("age", Int(), Some(Attexp(Int("24"))))
+    , [ Exp("firstname", Str(), None())
+      , Exp("surname", Str(), Some(Attexp(String("\"kachi\""))))
       , Exp(
-          "score"
+          "age"
         , Int()
-        , Some(Attexp(Add(Int("2"), Int("40"))))
+        , Some(
+            Attexp(
+              Sub(Sub(Num("24"), Num("21")), Num("4"))
+            )
+          )
         )
+      , Exp("score", Int(), None())
       , Ent("friend", "uche")
       ]
     )

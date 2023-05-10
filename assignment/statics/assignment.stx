@@ -26,10 +26,13 @@ stmtsOK maps stmtOk(*,list(*))
    typeOfType: scope * Type -> TYPE
   
   
-//  typeOfType(s,Tid("int"))=INT(). 
+   typeOfType(s,Int())=INT(). 
+   typeOfType(s,Str())=STR().
   
 //  attOk(s,Exp(e1,e2,e3)) :-{T}
-//     typeOfType( e2)==T.
+//     typeOfType(s, e2)==T,
+//     typeOfExp(s,e3)==T.
+     
     
      
    

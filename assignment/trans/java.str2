@@ -39,7 +39,7 @@ rules
 			
 	enti-att-to-java:
 	    Ent(e1,e2)-> $[
-	    private [eName] [entity]()
+	    public   [eName] = new [entity]()
 	    ]
 	    with
 	    	 eName := e1
@@ -50,10 +50,10 @@ rules
 		Int() -> $[int] 
 	
 	to-java-type:
-	    Str() -> $[string]
+	    Str() -> $[String]
 	
 	res-exp	:
-	  Some(Attexp(e)) -> [expression]
+	  Some(Attexp(e)) -> $[= [expression]]
 	  with 
 	  expression := <compute-exp >e	
 	  
@@ -67,10 +67,10 @@ rules
 	  None() -> $[]
 	  
 	compute-exp:
-	   Sub(e1,e2) -> Sub(p1,p2)
+	   Sub(e1,e2) ->  $[ [p1] - [p2]]
 	   with
-	      p1 := e1
-	     ;p2 :=e2
+	      p1 := <compute-exp>e1
+	     ;p2 :=<compute-exp>e2
 	
 	compute-exp:
 	   String(e1) -> e1
